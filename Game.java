@@ -236,6 +236,10 @@ public class Game extends World{
                 player.playBoing();
             }
         }
+        if(key.equals("escape")){
+            Greenfoot.setWorld(new Pause(this));
+        }
+        //remove and transfer to pause screen
         if(key.equalsIgnoreCase("m")){
             if(titleMusic.getVolume() == 0){
                 currentVolume = 100;

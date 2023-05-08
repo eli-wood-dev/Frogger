@@ -3,13 +3,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class UIElement here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Eli Wood
+ * @version 1
  */
 public class UIElement extends Actor
 {
     private GifImage gif;
     
+    /**
+     * Constructor
+     * 
+     * @author Eli Wood
+     * @version 1
+     * @param gif the gif for the ui element
+     */
     public UIElement(GifImage gif){
         this.gif = gif;
         setImage(gif.getCurrentImage());

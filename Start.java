@@ -6,23 +6,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Eli Wood
  * @version 1
  */
-public class Start extends World
+public class Start extends Menu
 {
-    Game game;
     UIElement title;
 
     /**
      * Constructor
      * 
      * @author Eli Wood
-     * 
+     * @version 1
      */
     public Start(Game game)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(300, 500, 1); 
+        super(game); 
         showText("Press space to start", getWidth()/2, getHeight()/2);
-        this.game = game;
         title = new UIElement(new GifImage("title.gif"));
         addObject(title, getWidth()/2, getHeight()/2 - 50);
         
@@ -36,7 +34,10 @@ public class Start extends World
         showText("Press space to start", getWidth()/2, getHeight()/2);
         
         if(Greenfoot.isKeyDown("space")){
-            Greenfoot.setWorld(game);
+            removeObject(title);
+            Greenfoot.setWorld(world);
+        } else if(Greenfoot.isKeyDown("escape")){
+            Greenfoot.setWorld(new Pause(this));
         }
     }
 }
