@@ -55,7 +55,7 @@ public class River extends Road{
         int carY = y;
         int yOffset = 25;
         double newSpeed = carSpeed;
-        boolean kill = true;;
+        boolean kill = true;
         
         if(timer % carFrequency == 0){
             for(int i = 0; i < 2; i++){

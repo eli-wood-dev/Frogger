@@ -45,7 +45,7 @@ public class Game extends World{
         Greenfoot.setWorld(new Start(this));
         
         setPaintOrder(new Class[]{Car.class, Frogger.class, Log.class, Rock.class, River.class, Corpse.class, Road.class});
-        setActOrder(new Class[]{Car.class, Log.class, Rock.class, Road.class, River.class, Frogger.class, Corpse.class});
+        setActOrder(new Class[]{Car.class, Rock.class, Log.class, Road.class, River.class, Frogger.class, Corpse.class});
         
         width = getWidth();
         height = getHeight();
