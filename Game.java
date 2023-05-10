@@ -89,7 +89,7 @@ public class Game extends World{
         }
         
         //add starting road
-        roads.add(new Road(width, 125, 5, 60));
+        roads.add(new River(width, 125, 2, 90));
         addObject(roads.get(roads.size()-1), width/2, -25);
         
         lives = 3;
