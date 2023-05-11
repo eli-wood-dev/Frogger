@@ -28,8 +28,6 @@ public class Game extends World{
     Random r = new Random();
     
     GreenfootSound titleMusic;
-    int currentVolume = 100;
-    int currentSoundVolume = 100;
     
     /**
      * Constructor
@@ -174,10 +172,8 @@ public class Game extends World{
         
         displayLives();
         displayScore();
-        showText("press m to mute music", 200, 25);
-        showText("press n to mute sfx", 200, 50);
-        titleMusic.setVolume(currentVolume);
-        player.setVolume(currentSoundVolume);
+        titleMusic.setVolume(Pause.getVolume());
+        player.setVolume(Pause.getSoundVolume());
         
         timer++;
     }
@@ -243,21 +239,6 @@ public class Game extends World{
         }
         if(key.equals("escape")){
             Greenfoot.setWorld(new Pause(this));
-        }
-        //remove and transfer to pause screen
-        if(key.equalsIgnoreCase("m")){
-            if(titleMusic.getVolume() == 0){
-                currentVolume = 100;
-            } else{
-                currentVolume = 1;
-            }
-        }
-        if(key.equalsIgnoreCase("n")){
-            if(titleMusic.getVolume() == 0){
-                currentSoundVolume = 80;
-            } else{
-                currentSoundVolume = 1;
-            }
         }
     }
     

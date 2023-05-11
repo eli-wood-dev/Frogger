@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class UIElement extends Actor
 {
     private GifImage gif;
+    private GreenfootImage image;
     
     /**
      * Constructor
@@ -23,11 +24,35 @@ public class UIElement extends Actor
     }
     
     /**
+     * Constructor
+     * 
+     * @author Eli Wood
+     * @version 1
+     * @param image the image the ui element will use
+     */
+    public UIElement(GreenfootImage image){
+        this.image = image;
+        setImage(image);
+    }
+    
+    /**
+     * Constructor
+     * 
+     * @author Eli Wood
+     * @version 1
+     */
+    public UIElement(){
+        
+    }
+    
+    /**
      * Act - do whatever the UIElement wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act()
-    {
-        setImage(gif.getCurrentImage());
+    public void act(){
+        if(gif != null){
+            setImage(gif.getCurrentImage());
+        }
+        
     }
 }

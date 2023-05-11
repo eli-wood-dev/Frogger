@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * Frog class for the player
@@ -22,7 +23,8 @@ public class Frogger extends Actor
     private int timer;
     int invinEnd;
     GreenfootSound die;
-    GreenfootSound boing;
+    GreenfootSound boingTemplate = new GreenfootSound("boing.wav");
+    ArrayList<GreenfootSound> boings = new ArrayList<GreenfootSound>();
     GreenfootSound drown;
     
     /**
@@ -37,7 +39,7 @@ public class Frogger extends Actor
         frog = getImage();
         frog.scale(speed, speed);
         die = new GreenfootSound("splat.wav");
-        boing = new GreenfootSound("boing.wav");
+        boings.add(boingTemplate);
         drown = new GreenfootSound("drown.wav");
     }
     
@@ -56,7 +58,7 @@ public class Frogger extends Actor
         frog.scale(speed, speed);
         setImage(frog);
         die = new GreenfootSound("splat.wav");
-        boing = new GreenfootSound("boing.wav");
+        boings.add(boingTemplate);
         drown = new GreenfootSound("drown.wav");
     }
     
@@ -97,6 +99,13 @@ public class Frogger extends Actor
         
         if(timer >= invinEnd){
             invincible = false;
+        }
+        
+        for(int i = 0; i < boings.size(); i++){
+            if(!boings.get(i).isPlaying()){
+                boings.remove(i);
+                i--;
+            }
         }
         
         timer ++;
@@ -238,7 +247,9 @@ public class Frogger extends Actor
      */
     public void setVolume(int newVolume){
         die.setVolume(newVolume);
-        boing.setVolume(newVolume);
+        for(GreenfootSound s : boings){
+            s.setVolume(newVolume);
+        }
     }
     
     /**
@@ -259,12 +270,6 @@ public class Frogger extends Actor
      * @version 1
      */
     public void playBoing(){
-        if(boing.isPlaying()){
-            GreenfootSound temp = new GreenfootSound("boing.wav");
-            temp.setVolume(boing.getVolume());
-            temp.play();
-        } else{
-            boing.play();
-        }
+        boings.add(boingTemplate);
     }
 }
