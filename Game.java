@@ -39,7 +39,12 @@ public class Game extends World{
     public Game() {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(300, 500, 1, false); 
-        titleMusic = new GreenfootSound("funnysong.mp3");
+        if((int)(r.nextDouble()*10) == 0){
+            titleMusic = new GreenfootSound("sadsong.mp3");
+        } else{
+            titleMusic = new GreenfootSound("funnysong.mp3");
+        }
+        
         titleMusic.playLoop();
         titleMusic.setVolume(80);
         Greenfoot.setWorld(new Start(this));
