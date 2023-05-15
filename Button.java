@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Button extends UIElement implements Clickable{
     boolean active = true;
     
+    MouseInfo mouse = Greenfoot.getMouseInfo();
+    
     /**
      * Constructor
      * 
@@ -47,8 +49,9 @@ public class Button extends UIElement implements Clickable{
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act(){
+        mouse = Greenfoot.getMouseInfo();
         
-        if(mouse.getButton() == 1 && mouse.getActor() != null && mouse.getActor() == this){
+        if(mouse != null && mouse.getClickCount() < 1 && mouse.getButton() == 1 && mouse.getActor() == this){
             onClick();
         }
         

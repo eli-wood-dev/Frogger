@@ -247,6 +247,7 @@ public class Frogger extends Actor
      */
     public void setVolume(int newVolume){
         die.setVolume(newVolume);
+        drown.setVolume(newVolume);
         for(GreenfootSound s : boings){
             s.setVolume(newVolume);
         }
@@ -270,6 +271,7 @@ public class Frogger extends Actor
      * @version 1
      */
     public void playBoing(){
-        boings.add(boingTemplate);
+        boings.add(new GreenfootSound("boing.wav"));
+        boings.get(boings.size()-1).play();
     }
 }

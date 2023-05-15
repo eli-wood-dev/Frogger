@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Eli Wood
  * @version 1
  */
-public class UIElement extends Actor
+public class UIElement extends SmoothMover
 {
     private GifImage gif;
     private GreenfootImage image;

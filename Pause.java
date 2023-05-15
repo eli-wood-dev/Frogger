@@ -11,8 +11,11 @@ public class Pause extends Menu{
     Button muteMusic;
     Button muteSound;
     
-    private static int musicVolume = 80;
-    private static int soundVolume = 80;
+    Slider musicSlider;
+    Slider soundSlider;
+    
+    private static int musicVolume = 100;
+    private static int soundVolume = 100;
     
     /**
      * Constructor 
@@ -29,23 +32,19 @@ public class Pause extends Menu{
         muteMusic = new Button();
         muteSound = new Button();
         
+        musicSlider = new Slider(getWidth()/5*2, 20);
+        soundSlider = new Slider(getWidth()/5*2, 20);
+        
         title = new UIElement(new GifImage("title.gif"));
         addObject(title, getWidth()/2, getHeight()/2 - 150);
-        addObject(muteMusic, getWidth()/4, getHeight()/2);
-        addObject(muteSound, getWidth()/4, getHeight()/2 + 50);
-        showText("" + musicVolume, getWidth()/4*3, getHeight()/2);
-        showText("" + soundVolume, getWidth()/4*3, getHeight()/2 + 50);
-        
-        if(musicVolume >1){
-            muteMusic.setState(false);
-        } else{
-            muteMusic.setState(true);
-        }
-        if(soundVolume >1){
-            muteSound.setState(false);
-        } else{
-            muteSound.setState(true);
-        }
+        addObject(muteMusic, getWidth()/5, getHeight()/2);
+        addObject(muteSound, getWidth()/5, getHeight()/2 + 75);
+        muteMusic.setState(false);
+        muteSound.setState(false);
+        addObject(musicSlider, getWidth()/2, getHeight()/2);
+        addObject(soundSlider, getWidth()/2, getHeight()/2 + 75);
+        showText("Music:" + musicVolume, getWidth()/5*4, getHeight()/2);
+        showText("Sound:" + soundVolume, getWidth()/5*4, getHeight()/2 + 75);
     }
     
     /**
@@ -57,19 +56,19 @@ public class Pause extends Menu{
     public void act(){
         showText("Press space to resume", getWidth()/2, getHeight()/2 - 100);
         
-        showText("" + musicVolume, getWidth()/4*3, getHeight()/2);
-        showText("" + soundVolume, getWidth()/4*3, getHeight()/2 + 50);
+        showText("Music:" + musicVolume, getWidth()/5*4, getHeight()/2);
+        showText("Sound:" + soundVolume, getWidth()/5*4, getHeight()/2 + 75);
         
         if(muteMusic.getState() == true){
             musicVolume = 1;
         } else{
-            musicVolume = 80;//change when sliders are added
+            musicVolume = musicSlider.getValue();
         }
         
         if(muteSound.getState() == true){
             soundVolume = 1;
         } else{
-            soundVolume = 80;//change when sliders are added
+            soundVolume = soundSlider.getValue();
         }
         
         //add sliders for volume and buttons to mute

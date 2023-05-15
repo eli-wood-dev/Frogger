@@ -47,7 +47,7 @@ public class Game extends World{
         titleMusic.setVolume(80);
         Greenfoot.setWorld(new Start(this));
         
-        setPaintOrder(new Class[]{Car.class, Frogger.class, Log.class, Rock.class, River.class, Corpse.class, Road.class});
+        setPaintOrder(new Class[]{Car.class, Frogger.class, Log.class, Rock.class, River.class, Corpse.class, Road.class, Button.class, Slider.class});
         setActOrder(new Class[]{Car.class, Rock.class, Log.class, Road.class, River.class, Frogger.class, Corpse.class});
         
         width = getWidth();
@@ -268,5 +268,27 @@ public class Game extends World{
      */
     public static double map(double s, double low1, double high1, double low2, double high2){
         return (s-low1)*(high2-low2)/(high1-low1) + low2;
+    }
+    
+    /**
+     * constrains a number to a range
+     * 
+     * @author Eli Wood
+     * @version 1
+     * 
+     * @param num the number to constrain
+     * @param low the low end of the range
+     * @param high the high end of the range
+     * @return the constrained number
+     */
+    public static int constrain(int num, int low, int high){
+        if(num < low){
+            num = low;
+        }
+        if(num > high){
+            num = high;
+        }
+        
+        return num;
     }
 }
