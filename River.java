@@ -2,30 +2,56 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 /**
- * Write a description of class River here.
+ * River class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Eli Wood
+ * @version 1
  */
 public class River extends Road{
     GreenfootImage carImage = new GreenfootImage("bread.png");
     ArrayList<Rock> rocks = new ArrayList<Rock>();
     
+    /**
+     * default constructor
+     * 
+     * @author Eli Wood
+     */
     public River(){
         super();
         y-= 25;
     }
     
+    /**
+     * Constructor
+     * 
+     * @author Eli Wood
+     * @param width the river's width
+     * @param height the river's height
+     */
     public River(int width, int height){
         super(width, height);
         y-= 25;
     }
     
-    public River(int width, int height, double carSpeed, int carFrequency){
-        super(width, height, carSpeed, carFrequency);
+    /**
+     * Constructor
+     * 
+     * @author Eli Wood
+     * @param width the river's width
+     * @param height the river's height
+     * @param logSpeed the speed of the slower logs
+     * @param logFrequency the frequency of the logs
+     */
+    public River(int width, int height, double logSpeed, int logFrequency){
+        super(width, height, logSpeed, logFrequency);
         y-= 25;
     }
     
+    /**
+     * creates rocks evenly spaced apart
+     * 
+     * @author Eli Wood
+     */
     private void createRocks(){
         int yOffset = 60;
         int rockX = 0;
@@ -42,6 +68,11 @@ public class River extends Road{
         
     }
     
+    /**
+     * main act function
+     * 
+     * @author Eli Wood
+     */
     @Override //changes cars to logs and kills player
     public void act(){
         if(world == null){
@@ -109,6 +140,11 @@ public class River extends Road{
         timer++;
     }
     
+    /**
+     * removes all rocks and logs
+     * 
+     * @author Eli Wood
+     */
     public void killAll(){
         for(int i = 0; i < cars.size(); i++){
             world.removeObject(cars.get(i));
