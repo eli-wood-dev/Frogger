@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Thing here.
+ * abstract class for a thing
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Eli Wood
+ * @version 1
  */
 public abstract class Thing extends Actor
 {
@@ -15,9 +15,34 @@ public abstract class Thing extends Actor
     protected int yOffset;
     protected boolean isDead = false;
     
+    /**
+     * used for checking if over the edge
+     * 
+     * @author Eli Wood
+     */
     abstract void checkEdge();
+    
+    /**
+     * used to detect and handle collision
+     * 
+     * @author Eli Wood
+     */
     abstract void checkCollision();
+    
+    /**
+     * moves to a specific location
+     * 
+     * @author Eli Wood
+     * @param x the new x
+     * @param y the new y
+     */
     abstract void moveTo(int x, int y);
+    
+    /**
+     * checks if the thing is dead
+     * 
+     * @return if the thing is dead
+     */
     public boolean getDead(){
         return isDead;
     }

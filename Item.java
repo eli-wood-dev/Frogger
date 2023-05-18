@@ -20,10 +20,22 @@ public class Item extends Thing
         checkEdge();
     }
     
+    /**
+     * moves to a specific location
+     * 
+     * @author Eli Wood
+     * @param x the new x
+     * @param y the new y
+     */
     public void moveTo(int x, int y){
         setLocation(x, y);
     }
     
+    /**
+     * checks if the frog is intersecting with the item
+     * 
+     * @author Eli Wood
+     */
     public void checkCollision(){
         if(intersects(world.getFrog())){
             
@@ -32,6 +44,11 @@ public class Item extends Thing
         }
     }
     
+    /**
+     * checks if the item is over the edge
+     * 
+     * @author Eli Wood
+     */
     public void checkEdge(){
         if(y < world.getHeight()){
             isDead = true;

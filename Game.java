@@ -45,7 +45,6 @@ public class Game extends World{
         }
         
         titleMusic.playLoop();
-        titleMusic.setVolume(80);
         Greenfoot.setWorld(new Start(this));
         
         setPaintOrder(new Class[]{Car.class, Frogger.class, Log.class, Rock.class, River.class, Corpse.class, Road.class, Button.class, Slider.class});
