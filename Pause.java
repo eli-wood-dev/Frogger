@@ -57,18 +57,26 @@ public class Pause extends Menu{
      * @version 1
      */
     public void act(){
+        if(!musicSlider.getState()){
+            musicSlider.setValue(musicVolume);
+        }
+        
+        if(!soundSlider.getState()){
+            soundSlider.setValue(soundVolume);
+        }
+        
         showText("Press space to resume", getWidth()/2, getHeight()/2 - 100);
         
         showText("Music:" + musicVolume, getWidth()/5*4, getHeight()/2);
         showText("Sound:" + soundVolume, getWidth()/5*4, getHeight()/2 + 75);
         
-        if(muteMusic.getState() == true){
+        if(muteMusic.getState()){
             musicVolume = 1;
         } else{
             musicVolume = musicSlider.getValue();
         }
         
-        if(muteSound.getState() == true){
+        if(muteSound.getState()){
             soundVolume = 1;
         } else{
             soundVolume = soundSlider.getValue();

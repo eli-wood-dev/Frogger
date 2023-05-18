@@ -70,7 +70,7 @@ public class Slider extends Button{
         }
         
         if(interact == null){
-            interact = new Button(image);
+            interact = new Button(image, false);
             world.addObject(interact, getX() + width/2, getY());
         }
         
@@ -110,7 +110,22 @@ public class Slider extends Button{
         width = amount;
         getImage().scale(width, height);
         
-        interact.setLocation(getExactX() + width/2, getY());
+        if(interact != null){
+            interact.setLocation(getExactX() + width/2, getY());
+        }
+        
+    }
+    
+    /**
+     * sets the value of the slider and adjusts the width accordingly
+     * 
+     * @author Eli Wood
+     * @param value the new value
+     */
+    public void setValue(int value){
+        this.value = value;
+        
+        adjustWidth((int)Game.map(value, 1, 100, 1, maxWidth));
     }
     
     /**
@@ -122,5 +137,13 @@ public class Slider extends Button{
      */
     public int getValue(){
         return value;
+    }
+    
+    public boolean getState(){
+        try{
+            return interact.getState();
+        } catch(Exception e){
+            return false;
+        }
     }
 }
