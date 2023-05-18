@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class End here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Eli Wood
+ * @version 1
  */
 public class End extends Menu
 {    
@@ -13,6 +13,8 @@ public class End extends Menu
      * 
      * @author Eli Wood
      * @version 1
+     * 
+     * @param game the game you are coming from
      */
     public End(Game game)
     {    
@@ -22,6 +24,12 @@ public class End extends Menu
         showText("Press space to start", getWidth()/2, getHeight()/2 + 50);
     }
     
+    /**
+     * main act function
+     * 
+     * @author Eli Wood
+     * @version 1
+     */
     public void act(){
         showText("Game over", getWidth()/2, getHeight()/2 - 50);
         showText("Press space to start", getWidth()/2, getHeight()/2 + 50);

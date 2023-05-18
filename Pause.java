@@ -16,12 +16,15 @@ public class Pause extends Menu{
     
     private static int musicVolume = 100;
     private static int soundVolume = 100;
+    private static boolean musicMuted = false;
+    private static boolean soundMuted = false;
     
     /**
      * Constructor 
      * 
      * @author Eli Wood
      * @version 1
+     * @param world the world you are comung from
      */
     public Pause(World world){    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -39,8 +42,8 @@ public class Pause extends Menu{
         addObject(title, getWidth()/2, getHeight()/2 - 150);
         addObject(muteMusic, getWidth()/5, getHeight()/2);
         addObject(muteSound, getWidth()/5, getHeight()/2 + 75);
-        muteMusic.setState(false);
-        muteSound.setState(false);
+        muteMusic.setState(musicMuted);
+        muteSound.setState(soundMuted);
         addObject(musicSlider, getWidth()/2, getHeight()/2);
         addObject(soundSlider, getWidth()/2, getHeight()/2 + 75);
         showText("Music:" + musicVolume, getWidth()/5*4, getHeight()/2);
@@ -71,7 +74,8 @@ public class Pause extends Menu{
             soundVolume = soundSlider.getValue();
         }
         
-        //add sliders for volume and buttons to mute
+        musicMuted = muteMusic.getState();
+        soundMuted = muteSound.getState();
         
         if(Greenfoot.isKeyDown("space")){
             removeObject(title);

@@ -46,8 +46,10 @@ public class UIElement extends SmoothMover
     }
     
     /**
-     * Act - do whatever the UIElement wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main act function
+     * 
+     * @author Eli Wood
+     * @version 1
      */
     public void act(){
         if(gif != null){

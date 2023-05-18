@@ -23,7 +23,6 @@ public class Frogger extends Actor
     private int timer;
     int invinEnd;
     GreenfootSound die;
-    GreenfootSound boingTemplate = new GreenfootSound("boing.wav");
     ArrayList<GreenfootSound> boings = new ArrayList<GreenfootSound>();
     GreenfootSound drown;
     
@@ -39,7 +38,6 @@ public class Frogger extends Actor
         frog = getImage();
         frog.scale(speed, speed);
         die = new GreenfootSound("splat.wav");
-        boings.add(boingTemplate);
         drown = new GreenfootSound("drown.wav");
     }
     
@@ -58,13 +56,14 @@ public class Frogger extends Actor
         frog.scale(speed, speed);
         setImage(frog);
         die = new GreenfootSound("splat.wav");
-        boings.add(boingTemplate);
         drown = new GreenfootSound("drown.wav");
     }
     
     /**
-     * Act - do whatever the Frogger wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main act function for the frog
+     * 
+     * @author Eli Wood
+     * @version 1
      */
     public void act(){
         // Add your action code here.

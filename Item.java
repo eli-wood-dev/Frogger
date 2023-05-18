@@ -1,16 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Item here.
+ * class for an item that can interact with the player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Eli Wood 
+ * @version 1
  */
 public class Item extends Thing
 {
     /**
-     * Act - do whatever the Item wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main act function
+     * 
+     * @author Eli Wood
      */
     public void act(){
         y = getY();

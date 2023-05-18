@@ -13,6 +13,9 @@ public abstract class Menu extends World
     /**
      * Constructor
      * 
+     * @author Eli Wood
+     * @version 1
+     * @param world the world you are coming from
      */
     public Menu(World world)
     {    

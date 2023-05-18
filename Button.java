@@ -45,8 +45,9 @@ public class Button extends UIElement implements Clickable{
     }
     
     /**
-     * Act - do whatever the Button wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main act function
+     * 
+     * @author Eli Wood
      */
     public void act(){
         mouse = Greenfoot.getMouseInfo();

@@ -33,6 +33,7 @@ public class Game extends World{
      * Constructor
      * 
      * @author Eli Wood
+     * @version 1
      */
     public Game() {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -102,8 +103,10 @@ public class Game extends World{
     }
     
     /**
-     * Act - do whatever the World wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main function for the game
+     * 
+     * @author Eli Wood
+     * @version 1
      */
     public void act(){
         moveRoad = 0;

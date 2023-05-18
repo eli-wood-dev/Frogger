@@ -15,6 +15,8 @@ public class Start extends Menu
      * 
      * @author Eli Wood
      * @version 1
+     * 
+     * @param game the game you are coming from
      */
     public Start(Game game)
     {    
@@ -27,8 +29,10 @@ public class Start extends Menu
     }
     
     /**
-     * Act - do whatever the Start wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main act function
+     * 
+     * @author Eli Wood
+     * @version 1
      */
     public void act(){
         showText("Press space to start", getWidth()/2, getHeight()/2);

@@ -41,8 +41,9 @@ public class Corpse extends Actor
     }
     
     /**
-     * Act - do whatever the Corpse wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main act for the corpse
+     * 
+     * @author Eli Wood
      */
     public void act(){
         if(corpse == null){

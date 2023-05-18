@@ -6,7 +6,11 @@ import greenfoot.*;
  * @version 1
  */
 public interface Clickable{
-    //use this for what happens when the mouse ir clicked
+    /**
+     * what happens when something is clicked
+     * 
+     * @author Eli Wood
+     */
     public void onClick();
     
 }

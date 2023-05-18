@@ -23,8 +23,9 @@ public class Rock extends Thing
     }
     
     /**
-     * Act - do whatever the Rock wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * main act function
+     * 
+     * @author Eli Wood
      */
     public void act()
     {
